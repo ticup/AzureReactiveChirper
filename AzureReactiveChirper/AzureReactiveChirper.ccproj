@@ -11,7 +11,7 @@
     <RootNamespace>OrleansAzureSample</RootNamespace>
     <AssemblyName>OrleansAzureSample</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
-    <Name>OrleansAzureSample</Name>
+    <Name>AzureReactiveChirper</Name>
     <UseIISExpressByDefault>False</UseIISExpressByDefault>
     <UseEmulatorExpressByDefault>False</UseEmulatorExpressByDefault>
     <UseWebProjectPorts>True</UseWebProjectPorts>
@@ -40,14 +40,12 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OrleansAzureSilos\OrleansAzureSilos.csproj">
-      <Name>OrleansAzureSilos</Name>
+    <ProjectReference Include="..\OrleansAzureSilos\AzureChirperSilos.csproj">
+      <Name>AzureChirperSilos</Name>
       <Project>{6b7e7c7d-fcb5-415c-a361-e653cb9ead72}</Project>
       <Private>True</Private>
       <RoleType>Worker</RoleType>
-      <RoleName>OrleansAzureSilos</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-      <!--<UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>-->
+      <RoleName>AzureChirperSilos</RoleName>
     </ProjectReference>
     <ProjectReference Include="..\WebRole\WebRole.csproj">
       <Name>WebRole</Name>
@@ -59,11 +57,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="OrleansAzureSilosContent\" />
+    <Folder Include="AzureChirperSilosContent" />
     <Folder Include="WebRoleContent\" />
   </ItemGroup>
   <ItemGroup>
-    <DiagnosticsConfiguration Include="OrleansAzureSilosContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="AzureChirperSilosContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="WebRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->

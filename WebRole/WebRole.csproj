@@ -5450,27 +5450,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelloEnvironmentInterfaces\HelloEnvironmentInterfaces.csproj">
+    <ProjectReference Include="..\HelloEnvironmentInterfaces\ChirperGrainInterfaces.csproj">
       <Project>{163cce80-c506-468c-9b28-e2ff198097e3}</Project>
-      <Name>HelloEnvironmentInterfaces</Name>
+      <Name>ChirperGrainInterfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\.babelrc" />
     <Content Include="src\chirper.jsx" />
-    <Content Include="src\components\dashboard\activation-widget.jsx" />
-    <Content Include="src\components\dashboard\counter-widget.jsx" />
-    <Content Include="src\components\dashboard\dashboard.jsx" />
-    <Content Include="src\components\dashboard\gauge-widget.jsx" />
-    <Content Include="src\components\dashboard\grain-breakdown.jsx" />
-    <Content Include="src\components\dashboard\hosts-widget.jsx" />
-    <Content Include="src\components\dashboard\multi-series-chart-widget.jsx" />
-    <Content Include="src\components\dashboard\PostMessage.jsx" />
-    <Content Include="src\components\dashboard\properties-widget.jsx" />
-    <Content Include="src\components\dashboard\silo-drilldown.jsx" />
-    <Content Include="src\components\dashboard\silo-state.jsx" />
-    <Content Include="src\components\dashboard\silo-widget.jsx" />
-    <Content Include="src\components\dashboard\twoseries-chart-widget.jsx" />
     <Content Include="src\components\FollowerList.jsx" />
     <Content Include="src\components\Login.jsx" />
     <Content Include="src\components\NewFollower.jsx" />
