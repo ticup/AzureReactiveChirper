@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>2.8</ProductVersion>
+    <ProductVersion>2.9</ProductVersion>
     <ProjectGuid>{492563fc-84b6-41c5-a776-394a8bbf72c6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -47,27 +47,17 @@
       <RoleType>Worker</RoleType>
       <RoleName>AzureReactiveChirperSilos</RoleName>
     </ProjectReference>
-    <ProjectReference Include="..\WebRole\WebRole.csproj">
-      <Name>WebRole</Name>
-      <Project>{313b557f-4b35-4064-bac7-fdc47845c534}</Project>
-      <Private>True</Private>
-      <RoleType>Web</RoleType>
-      <RoleName>WebRole</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AzureReactiveChirperSilosContent" />
-    <Folder Include="WebRoleContent\" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="AzureReactiveChirperSilosContent\diagnostics.wadcfgx" />
-    <DiagnosticsConfiguration Include="WebRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
-    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\2.8\</CloudExtensionsDir>
+    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\2.9\</CloudExtensionsDir>
   </PropertyGroup>
   <Import Project="$(CloudExtensionsDir)Microsoft.WindowsAzure.targets" />
   <PropertyGroup>
