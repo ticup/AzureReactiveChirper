@@ -4,7 +4,6 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Fleck;
-using Orleans.Azure.Samples.ReactiveChirper.Communication;
 using GrainInterfaces;
 using Orleans.Runtime;
 using Orleans.Runtime.Host;
@@ -62,12 +61,12 @@ namespace Orleans.Azure.Samples.ReactiveChirper
                         break;
 
                     default:
-                        Send(new Communication.JsonException { Text = "unknown request" });
+                        Send(new { Type = "Exception", Text = "unknown request" });
                         break;
                 }
             } catch (Exception e)
             {
-                Send(new Communication.JsonException { Text = e.ToString() });
+                Send(new { Type = "Exception", Text = e.ToString() });
             }
         }
 

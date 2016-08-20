@@ -40,12 +40,12 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OrleansAzureSilos\AzureChirperSilos.csproj">
-      <Name>AzureChirperSilos</Name>
+    <ProjectReference Include="..\AzureReactiveChirperSilos\AzureReactiveChirperSilos.csproj">
+      <Name>AzureReactiveChirperSilos</Name>
       <Project>{6b7e7c7d-fcb5-415c-a361-e653cb9ead72}</Project>
       <Private>True</Private>
       <RoleType>Worker</RoleType>
-      <RoleName>AzureChirperSilos</RoleName>
+      <RoleName>AzureReactiveChirperSilos</RoleName>
     </ProjectReference>
     <ProjectReference Include="..\WebRole\WebRole.csproj">
       <Name>WebRole</Name>
@@ -57,11 +57,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AzureChirperSilosContent" />
+    <Folder Include="AzureReactiveChirperSilosContent" />
     <Folder Include="WebRoleContent\" />
   </ItemGroup>
   <ItemGroup>
-    <DiagnosticsConfiguration Include="AzureChirperSilosContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="AzureReactiveChirperSilosContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="WebRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->

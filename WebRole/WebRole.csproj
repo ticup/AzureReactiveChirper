@@ -5409,12 +5409,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Communication\JsonException.cs" />
-    <Compile Include="Communication\JsonFollow.cs" />
-    <Compile Include="Communication\JsonFollowerSubscribe.cs" />
-    <Compile Include="Communication\JsonMessage.cs" />
-    <Compile Include="Communication\JsonNewMessage.cs" />
-    <Compile Include="Communication\JsonTimelineSubscribe.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5450,7 +5444,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelloEnvironmentInterfaces\ChirperGrainInterfaces.csproj">
+    <ProjectReference Include="..\ChirperGrainInterfaces\ChirperGrainInterfaces.csproj">
       <Project>{163cce80-c506-468c-9b28-e2ff198097e3}</Project>
       <Name>ChirperGrainInterfaces</Name>
     </ProjectReference>

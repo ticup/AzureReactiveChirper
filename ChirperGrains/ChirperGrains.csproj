@@ -56,7 +56,7 @@
     <Compile Include="UserGrain.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelloEnvironmentInterfaces\ChirperGrainInterfaces.csproj">
+    <ProjectReference Include="..\ChirperGrainInterfaces\ChirperGrainInterfaces.csproj">
       <Project>{163cce80-c506-468c-9b28-e2ff198097e3}</Project>
       <Name>ChirperGrainInterfaces</Name>
     </ProjectReference>
