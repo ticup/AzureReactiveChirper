@@ -74,7 +74,6 @@ namespace Orleans.Azure.Samples.ReactiveChirper
         /* Timeline API */
         public void TimelineSubscribe(string username)
         {
-            //TimelineSubscriptions.Add(username);
             Dispatch(async () =>
             {
                 Logger.Verbose("Subscribing to timeline of {0}", username);
@@ -92,13 +91,15 @@ namespace Orleans.Azure.Samples.ReactiveChirper
                     Logger.Verbose("Pushing new timeline result of {0}: {1}", username, result);
                     Send(new { Type = "TimelineResult", Timeline = result });
                 }
+
+                Rc.Dispose();
             });
         }
 
-        //void TimelineUnsubscribe(string username)
-        //{
-        //    TimelineSubscriptions.Remove(username);
-        //}
+        void TimelineUnsubscribe(string username)
+        {
+            TimelineSubscriptions.Remove(username);
+        }
 
 
         /* 
@@ -126,6 +127,8 @@ namespace Orleans.Azure.Samples.ReactiveChirper
 
                     Send(new { Type = "FollowerResult", Followers = result });
                 }
+
+                Rc.Dispose();
             });
         }
 
