@@ -46,13 +46,28 @@
       <Private>True</Private>
       <RoleType>Worker</RoleType>
       <RoleName>AzureReactiveChirperSilos</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="..\WebRole\Orleans.Azure.Samples.WebRole.csproj">
+      <Name>Orleans.Azure.Samples.WebRole</Name>
+      <Project>{313b557f-4b35-4064-bac7-fdc47845c534}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>Orleans.Azure.Samples.WebRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AzureReactiveChirperSilosContent" />
+    <Folder Include="Orleans.Azure.Samples.WebRoleContent\" />
+    <Folder Include="Profiles" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="AzureReactiveChirperSilosContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="Orleans.Azure.Samples.WebRoleContent\diagnostics.wadcfgx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishProfile Include="Profiles\ReactiveChirperProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

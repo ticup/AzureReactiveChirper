@@ -12,14 +12,14 @@ namespace GrainInterfaces
         public Guid MessageId { get; private set; }
         public string Text { get; set; }
         public DateTime Timestamp { get; set; }
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
 
         public Message(string text, string userName)
         {
             this.MessageId = Guid.NewGuid();
             this.Text = text;
-            this.UserName = userName;
+            this.Username = userName;
             this.Timestamp = DateTime.Now;
         }
 
@@ -27,7 +27,7 @@ namespace GrainInterfaces
         {
             StringBuilder str = new StringBuilder();
             str.Append("Message: '").Append(Text).Append("'");
-            str.Append(" from @").Append(UserName);      
+            str.Append(" from @").Append(Username);      
             return str.ToString();
         }
     }

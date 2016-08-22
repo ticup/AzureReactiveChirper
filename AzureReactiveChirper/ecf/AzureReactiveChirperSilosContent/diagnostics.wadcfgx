@@ -29,7 +29,6 @@
         <Logs scheduledTransferPeriod="PT1M" scheduledTransferLogLevelFilter="Error" />
       </DiagnosticMonitorConfiguration>
     </WadCfg>
-    <!--<StorageAccount>MyStorageAccount</StorageAccount>-->
     <StorageAccount>devstoreaccount1</StorageAccount>
   </PublicConfig>
   <PrivateConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">

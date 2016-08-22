@@ -23,15 +23,15 @@ If you change the client, run one of the following commands from the **WebRole/s
 
 Unix:
 
-`` make ``
+    make
 
 Windows:
 
-`` Build.cmd ``
+    Build.cmd
 
 any platform:
 
-``node_modules\browserify\bin\cmd.js --outfile ../Scripts/chirper.min.js -t [babelify --presets [es2015 react] ]``
+    node_modules\browserify\bin\cmd.js --outfile ../Scripts/chirper.min.js -t [babelify --presets [es2015 react] ]
 
 ## Structure ##
 The core of this application looks as follows
