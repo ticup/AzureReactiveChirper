@@ -14,8 +14,6 @@ var DomContainer = document.getElementById('content');
 
 ReactDOM.render(<ThemeButtons/>, document.getElementById('button-toggles-content'));
 
-// TODO: username <-> userName
-
 /* UI Routing */
 // Login
 routie('', function () {
@@ -26,7 +24,7 @@ routie('', function () {
 // User page (timeline/followers)
 routie('/user/:username', function (username) {
     console.log("arrived at user page for " + username);
-    ReactDOM.render(<User userName={username} />, DomContainer);
+    ReactDOM.render(<User username={username} />, DomContainer);
 });
 
 /* Event Handling - Server Interaction */

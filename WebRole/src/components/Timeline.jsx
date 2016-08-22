@@ -20,7 +20,7 @@ module.exports = React.createClass({
     },
 
     componentDidMount: function () {
-        events.emit('TimelineSubscribe', this.props.userName);
+        events.emit('TimelineSubscribe', this.props.username);
         events.on('TimelineResult', this.onTimeline);
     },
 

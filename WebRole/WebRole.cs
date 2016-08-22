@@ -61,9 +61,11 @@ namespace Orleans.Azure.Samples.ReactiveChirper
 
         private void StartWebSocketServer()
         {
-            // Setup the websocket server (WebSockets didn't work with the Owin server at this point in time)
+            // Setup the websocket server
             var websocketserver = new WebSocketServer("ws://127.0.0.1:8181");
             var scheduler = TaskScheduler.Current;
+
+            // Start the server and delegate messages to a handler per connection
             websocketserver.Start(socket =>
             {
                 var wscontroller = new WebSocketHandler(socket, scheduler);

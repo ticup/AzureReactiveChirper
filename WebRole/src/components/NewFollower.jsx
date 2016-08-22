@@ -10,7 +10,7 @@ module.exports = React.createClass({
         e.preventDefault();
         var toFollow = ReactDOM.findDOMNode(this.refs.newFollowerInput).value;
         console.log("following " + toFollow);
-        events.emit('Follow', this.props.userName, toFollow);
+        events.emit('Follow', this.props.username, toFollow);
     },
 
     render: function () {

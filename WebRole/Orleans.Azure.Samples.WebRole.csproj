@@ -154,6 +154,7 @@
     <Content Include="src\lib\events.js" />
     <Content Include="src\lib\http.js" />
     <Content Include="packages.config" />
+    <Content Include="src\Build.cmd" />
     <None Include="src\lib\jquery-1.6.4-vsdoc.js" />
     <Content Include="src\lib\jquery-1.6.4.js" />
     <Content Include="src\lib\jquery-1.6.4.min.js" />

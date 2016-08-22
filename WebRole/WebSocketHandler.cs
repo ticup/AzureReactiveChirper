@@ -171,6 +171,7 @@ namespace Orleans.Azure.Samples.ReactiveChirper
                 var config = AzureClient.DefaultConfiguration();
                 AzureClient.Initialize(config);
             }
+
             return Task.Factory.StartNew(() => {
                 Task task = TaskDone.Done;
                 try

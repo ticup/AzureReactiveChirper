@@ -21,7 +21,7 @@ module.exports = React.createClass({
     },
 
     componentDidMount: function () {
-        events.emit('FollowerSubscribe', this.props.userName);
+        events.emit('FollowerSubscribe', this.props.username);
         events.on('FollowerResult', this.onFollowers);
     },
 

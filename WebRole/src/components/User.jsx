@@ -14,12 +14,12 @@ module.exports = React.createClass({
         return <div className="container-fluid">
            <div className="row">
                <div className="col-sm-9">
-                    <Timeline userName={this.props.userName} />
-                    <NewMessage userName={this.props.userName} />
+                    <Timeline username={this.props.username} />
+                    <NewMessage username={this.props.username} />
                </div>
                 <div className="col-sm-3">
-                    <FollowerList userName={this.props.userName} />
-                    <NewFollower userName={this.props.userName} />
+                    <FollowerList username={this.props.username} />
+                    <NewFollower username={this.props.username} />
                 </div>
             </div>
            

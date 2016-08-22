@@ -10,7 +10,7 @@ module.exports = React.createClass({
         e.preventDefault();
         var msg = ReactDOM.findDOMNode(this.refs.newMessageInput).value;
         console.log("posting " + msg);
-        events.emit('NewMessage', this.props.userName, msg);
+        events.emit('NewMessage', this.props.username, msg);
     },
 
     render: function () {
