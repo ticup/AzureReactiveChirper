@@ -48,8 +48,16 @@ namespace Orleans.Azure.Samples.ReactiveChirper
                         TimelineSubscribe((string)json.Username);
                         break;
 
+                    case "TimelineUnsubscribe":
+                        TimelineUnsubscribe((string)json.Username);
+                        break;
+
                     case "FollowerSubscribe":
                         FollowerSubscribe((string)json.Username);
+                        break;
+
+                    case "FollowerUnsubscribe":
+                        FollowerUnsubscribe((string)json.Username);
                         break;
 
                     case "Follow":
@@ -166,11 +174,7 @@ namespace Orleans.Azure.Samples.ReactiveChirper
 
         Task Dispatch(Func<Task> func)
         {
-            if (!AzureClient.IsInitialized)
-            {
-                var config = AzureClient.DefaultConfiguration();
-                AzureClient.Initialize(config);
-            }
+            
 
             return Task.Factory.StartNew(() => {
                 Task task = TaskDone.Done;

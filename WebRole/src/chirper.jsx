@@ -28,7 +28,7 @@ routie('/user/:username', function (username) {
 });
 
 /* Event Handling - Server Interaction */
-var host = "ws://" + window.location.hostname + ":8181";
+var host = "ws://" + window.location.hostname;
 var client = WebSocketClient.connect(host, function (json) {
     switch (json.Type) {
         case 'TimelineResult':

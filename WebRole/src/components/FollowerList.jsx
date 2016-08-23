@@ -17,7 +17,7 @@ module.exports = React.createClass({
     },
 
     onFollowers: function (followers) {
-        this.setState(followers);
+        this.setState({ Followers: followers });
     },
 
     componentDidMount: function () {

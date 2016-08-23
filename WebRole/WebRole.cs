@@ -24,7 +24,11 @@ namespace Orleans.Azure.Samples.ReactiveChirper
             bool ok = base.OnStart();
             //StartWebSocketServer();
 
-
+            if (!AzureClient.IsInitialized)
+            {
+                var config = AzureClient.DefaultConfiguration();
+                AzureClient.Initialize(config);
+            }
             Trace.WriteLine("OrleansAzureWeb-OnStart completed with OK=" + ok);
 
             return ok;
@@ -62,7 +66,7 @@ namespace Orleans.Azure.Samples.ReactiveChirper
         private void StartWebSocketServer()
         {
             // Setup the websocket server
-            var websocketserver = new WebSocketServer("ws://127.0.0.1:8181");
+            var websocketserver = new WebSocketServer("ws://127.0.0.1");
             var scheduler = TaskScheduler.Current;
 
             // Start the server and delegate messages to a handler per connection
