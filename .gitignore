@@ -200,4 +200,5 @@ FakesAssemblies/
 .vs/
 src/SetupTestScriptOutput.txt
 
+AzureReactiveChirper/ServiceConfiguration.Cloud.cscfg
 WebRole/src/node_modules

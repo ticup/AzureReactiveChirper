@@ -3,15 +3,17 @@
   <Role name="AzureReactiveChirperSilos">
     <Instances count="2" />
     <ConfigurationSettings>
-      <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="DataConnectionString" value="DefaultEndpointsProtocol=https;AccountName=reactivechirper;AccountKey=ZSC9VqOdeW/4uq5FeJ69GFZJw0bU7BexkvXIyJ3JpO/TgLhEXA/iY6bwu5khgxCPAZcsPzPq4ULTUH5PQnxubA==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=reactivechirper;AccountKey=srJYritbf1g1mW23FFq5l0bIi/0XvmipqUMGTvqbV123+tBbNChBu5A3zqYKYvT8omBS+FM3WX5ShtIGk7af2Q==" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="2be9435c-26fe-40b7-90d3-20085a5db5e7" />
     </ConfigurationSettings>
   </Role>
   <Role name="Orleans.Azure.Samples.WebRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
-      <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=reactivechirper;AccountKey=ZSC9VqOdeW/4uq5FeJ69GFZJw0bU7BexkvXIyJ3JpO/TgLhEXA/iY6bwu5khgxCPAZcsPzPq4ULTUH5PQnxubA==" />
+      <Setting name="DataConnectionString" value="DefaultEndpointsProtocol=https;AccountName=reactivechirper;AccountKey=ZSC9VqOdeW/4uq5FeJ69GFZJw0bU7BexkvXIyJ3JpO/TgLhEXA/iY6bwu5khgxCPAZcsPzPq4ULTUH5PQnxubA==" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="2be9435c-26fe-40b7-90d3-20085a5db5e7" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
