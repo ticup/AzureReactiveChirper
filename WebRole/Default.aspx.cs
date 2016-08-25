@@ -1,8 +1,6 @@
 using System;
 using System.IO;
 using GrainInterfaces;
-using Orleans.Runtime.Configuration;
-using Orleans.Runtime.Host;
 
 namespace Orleans.Azure.Samples.Web
 {
@@ -10,23 +8,20 @@ namespace Orleans.Azure.Samples.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack || AzureClient.IsInitialized)
+            if (!Page.IsPostBack)
                 return;
-
-            var config = AzureClient.DefaultConfiguration();
-            AzureClient.Initialize(config);
         }
 
-        protected async void ButtonSayHello_Click(object sender, EventArgs e)
+        protected void ButtonSayHello_Click(object sender, EventArgs e)
         {
             this.ReplyText.Text += "\n" + "Talking to Orleans";
 
-            IHelloEnvironment grainRef = GrainClient.GrainFactory.GetGrain<IHelloEnvironment>(0);
+            //IHelloEnvironment grainRef = GrainClient.GrainFactory.GetGrain<IHelloEnvironment>(0);
 
             try
             {
-                string reply = await grainRef.RequestDetails();
-                this.ReplyText.Text += "\n" + "Orleans said: " + reply + " at " + DateTime.UtcNow + " UTC";
+                //string reply = await grainRef.RequestDetails();
+                this.ReplyText.Text += "\n" + "Orleans disabled from web role " + DateTime.UtcNow + " UTC";
             }
             catch (Exception exc)
             {

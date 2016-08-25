@@ -21,7 +21,7 @@ namespace Grains
 
 
 
-        public Task<List<Message>> getMessages()
+        public Task<List<Message>> GetMessages()
         {
             return Task.FromResult(State.Msgs);
         }
@@ -46,6 +46,23 @@ namespace Grains
             return true;
         }
 
+        /// <summary>
+        /// Remove a message from the MessageList.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns>
+        /// True if the message was removed
+        /// </returns>
+        public async Task<bool> RemoveMessage(Guid messageId)
+        {
+            var removed = State.Msgs.RemoveAll(new Predicate<Message>((msg) => msg.MessageId.Equals(messageId)));
+            if (removed > 0)
+            {
+                await WriteStateAsync();
+                return true;
+            }
+            return false;
+        }
 
 
         public override Task OnActivateAsync()

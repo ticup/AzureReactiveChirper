@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System;
 using Orleans.Providers;
 using System.Linq;
+using ChirperGrainInterfaces;
 
 namespace Grains
 {
@@ -47,9 +48,9 @@ namespace Grains
         /// <summary>
         /// Get the Users this user is subscribed to
         /// </summary>
-        public Task<List<string>> GetFollowersList()
+        public Task<FollowerList> GetFollowersList()
         {
-            return Task.FromResult(State.Subscriptions.ToList());
+            return Task.FromResult(new FollowerList(Name, State.Subscriptions.ToList()));
         }
 
 
@@ -63,7 +64,7 @@ namespace Grains
             for (int i = 0; i <= State.ChunkNumber; i++) {
                 if (i > NoChunks) break;
                 var chunkGrain = GrainFactory.GetGrain<IMessageChunkGrain>(Name + "." + i);
-                Tasks.Add(chunkGrain.getMessages());
+                Tasks.Add(chunkGrain.GetMessages());
             }
             List<Message> Msgs = (await Task.WhenAll(Tasks)).SelectMany(x => x).ToList();
             return Msgs;
@@ -83,6 +84,20 @@ namespace Grains
             // chunk was full, add new one and try again (only once, not recursive).
             await AddChunk();
             return await CurrentChunk.AddMessage(msg);
+        }
+
+        /// <summary>
+        ///  Remove message with given MessageId
+        /// </summary>
+        public async Task<bool> RemoveMessage(Guid MessageId)
+        {
+            for (int i = 0; i <= State.ChunkNumber; i++)
+            {
+                var chunkGrain = GrainFactory.GetGrain<IMessageChunkGrain>(Name + "." + i);
+                var removed = await chunkGrain.RemoveMessage(MessageId);
+                if (removed) return true;
+            }
+            return false;
         }
 
 
@@ -107,7 +122,7 @@ namespace Grains
             List<Message> Msgs = (await Task.WhenAll(Tasks)).SelectMany((x) => x).ToList();
 
             // iv) order by Timestamp and take the first <limit> messages
-            return new Timeline(Msgs.OrderBy((m) => m.Timestamp).Take(limit).ToList());
+            return new Timeline(Name, Msgs.OrderBy((m) => m.Timestamp).Take(limit).ToList());
         }
 
 

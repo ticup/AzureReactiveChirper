@@ -9,8 +9,10 @@ namespace GrainInterfaces
     public class Timeline
     {
         public List<Message> Posts { get; set; }
-        public Timeline(List<Message> posts)
+        public string Username { get; set; }
+        public Timeline(string username, List<Message> posts)
         {
+            Username = username;
             Posts = posts;
         }
     }

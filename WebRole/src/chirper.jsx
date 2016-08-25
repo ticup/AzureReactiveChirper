@@ -28,7 +28,7 @@ routie('/user/:username', function (username) {
 });
 
 /* Event Handling - Server Interaction */
-var host = "ws://" + window.location.hostname;
+var host = "ws://" + window.location.hostname + ":80";
 var client = WebSocketClient.connect(host, function (json) {
     switch (json.Type) {
         case 'TimelineResult':
@@ -64,10 +64,19 @@ events.on('Follow', (username, toFollow) => {
     console.log({ username, toFollow });
     send({ Type: 'Follow', Username: username, ToFollow: toFollow });
 });
+events.on('Unfollow', (username, toUnfollow) => {
+    console.log("unfollowing");
+    console.log({ username, toUnfollow });
+    send({ Type: 'Unfollow', Username: username, ToUnfollow: toUnfollow });
+});
 
 events.on('NewMessage', (username, text) => {
     console.log("sending message");
     send({ Type: 'NewMessage', Username: username, Text: text });
+});
+events.on('RemoveMessage', (username, messageId) => {
+    console.log("Removing Message");
+    send({ Type: 'RemoveMessage', Username: username, MessageId: messageId});
 });
 
 // Go to login page

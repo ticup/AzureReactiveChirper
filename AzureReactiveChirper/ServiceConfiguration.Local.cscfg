@@ -5,7 +5,7 @@
     <ConfigurationSettings>
       <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
-      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="2be9435c-26fe-40b7-90d3-20085a5db5e7" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="ea01f22b-7003-4464-a577-1bf5d31ac96d" />
     </ConfigurationSettings>
   </Role>
   <Role name="Orleans.Azure.Samples.WebRole">
@@ -13,7 +13,17 @@
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
       <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
-      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="2be9435c-26fe-40b7-90d3-20085a5db5e7" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="ea01f22b-7003-4464-a577-1bf5d31ac96d" />
+      <Setting name="Host" value="127.0.0.1" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="WebSocketRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="ea01f22b-7003-4464-a577-1bf5d31ac96d" />
+      <Setting name="Host" value="127.0.0.1" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

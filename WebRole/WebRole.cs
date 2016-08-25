@@ -2,12 +2,6 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.WindowsAzure.ServiceRuntime;
-using System.Threading.Tasks;
-using Fleck;
-using System.Threading;
-using Orleans.Runtime.Host;
-using System.IO;
-using Orleans.Runtime;
 
 namespace Orleans.Azure.Samples.ReactiveChirper
 {
@@ -20,15 +14,10 @@ namespace Orleans.Azure.Samples.ReactiveChirper
             // For information on handling configuration changes see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
             RoleEnvironment.Changing += RoleEnvironmentChanging;
 
-            Task.Factory.StartNew(StartWebSocketServer, TaskCreationOptions.LongRunning);
+            
             bool ok = base.OnStart();
             //StartWebSocketServer();
 
-            if (!AzureClient.IsInitialized)
-            {
-                var config = AzureClient.DefaultConfiguration();
-                AzureClient.Initialize(config);
-            }
             Trace.WriteLine("OrleansAzureWeb-OnStart completed with OK=" + ok);
 
             return ok;
@@ -63,20 +52,6 @@ namespace Orleans.Azure.Samples.ReactiveChirper
             }
         }
 
-        private void StartWebSocketServer()
-        {
-            // Setup the websocket server
-            var websocketserver = new WebSocketServer("ws://127.0.0.1");
-            var scheduler = TaskScheduler.Current;
-
-            // Start the server and delegate messages to a handler per connection
-            websocketserver.Start(socket =>
-            {
-                var wscontroller = new WebSocketHandler(socket, scheduler);
-                socket.OnOpen = wscontroller.OnOpen;
-                socket.OnClose = wscontroller.OnClose;
-                socket.OnMessage = wscontroller.OnMessage;
-            });
-        }
+        
     }
 }

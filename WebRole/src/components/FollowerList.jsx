@@ -17,7 +17,14 @@ module.exports = React.createClass({
     },
 
     onFollowers: function (followers) {
-        this.setState({ Followers: followers });
+        if (followers.Username == this.props.username) {
+            this.setState(followers);
+        }
+    },
+
+    unfollow: function (follower, e) {
+        e.preventDefault();
+        events.emit('Unfollow', this.props.username, follower);
     },
 
     componentDidMount: function () {
@@ -26,14 +33,16 @@ module.exports = React.createClass({
     },
 
     componentWillUnmount: function () {
-        events.emit('FollowerUnsubscribe');
+        events.emit('FollowerUnsubscribe', this.props.username);
         events.removeListener('FollowerResult', this.onFollowers);
     },
+
 
     render: function () {
         var followers = this.state.Followers.map((followerName) =>
             <li className="list-group-item" key={followerName}>
                 {followerName}
+                <a className="pull-right" href="#" onClick={this.unfollow.bind(this, followerName)}><span className="glyphicon glyphicon-remove" ></span></a>
             </li>);
 
         return (

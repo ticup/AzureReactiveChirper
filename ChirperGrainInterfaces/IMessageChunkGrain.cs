@@ -8,8 +8,9 @@ namespace GrainInterfaces
 {
     public interface IMessageChunkGrain : Orleans.IGrainWithStringKey
     {
-        Task<List<Message>> getMessages();
+        Task<List<Message>> GetMessages();
 
         Task<bool> AddMessage(Message message);
+        Task<bool> RemoveMessage(Guid messageId);
     }
 }

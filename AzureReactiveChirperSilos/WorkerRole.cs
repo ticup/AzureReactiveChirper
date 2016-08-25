@@ -47,8 +47,12 @@ namespace Orleans.Azure.Silos
             Trace.WriteLine("OrleansAzureSilos-OnStart Starting Orleans silo", "Information");
 
             var config = AzureSilo.DefaultConfiguration();
+
             config.AddMemoryStorageProvider();
-            
+            config.Defaults.DefaultTraceLevel = Orleans.Runtime.Severity.Verbose;
+            //options.ClientConfiguration.DefaultTraceLevel = Orleans.Runtime.Severity.Verbose3;
+            //config.Defaults.TraceToConsole = true;
+
             // First example of how to configure an existing provider
             Example_ConfigureExistingStorageProvider(config);
             Example_ConfigureNewStorageProvider(config);

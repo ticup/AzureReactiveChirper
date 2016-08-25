@@ -30,9 +30,21 @@
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
       <Setting name="DataConnectionString" />
       <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" />
+      <Setting name="Host" />
     </ConfigurationSettings>
     <Endpoints>
-      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+      <InputEndpoint name="Endpoint1" protocol="http" port="8080" />
     </Endpoints>
   </WebRole>
+  <WorkerRole name="WebSocketRole" vmsize="Small">
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+      <Setting name="DataConnectionString" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" />
+      <Setting name="Host" />
+    </ConfigurationSettings>
+    <Endpoints>
+      <InputEndpoint name="WebSocket" protocol="tcp" port="80" />
+    </Endpoints>
+  </WorkerRole>
 </ServiceDefinition>

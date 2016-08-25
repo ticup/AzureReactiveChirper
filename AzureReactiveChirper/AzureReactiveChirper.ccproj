@@ -56,15 +56,25 @@
       <RoleName>Orleans.Azure.Samples.WebRole</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+    <ProjectReference Include="..\WebSocketRole\WebSocketRole.csproj">
+      <Name>WebSocketRole</Name>
+      <Project>{3fde4441-2747-47cd-a496-3eba6327bb24}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>WebSocketRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AzureReactiveChirperSilosContent" />
     <Folder Include="Orleans.Azure.Samples.WebRoleContent\" />
     <Folder Include="Profiles" />
+    <Folder Include="WebSocketRoleContent\" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="AzureReactiveChirperSilosContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="Orleans.Azure.Samples.WebRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="WebSocketRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
     <PublishProfile Include="Profiles\ReactiveChirperProduction.azurePubxml" />
