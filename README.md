@@ -7,7 +7,7 @@ They can post messages and follow other people. The timeline consists of the fir
 The key idea feature is that the timeline and the follower list are reactively/automatically updated whenever its value changes in the system.
 
 
-
+A demo of this app is running on Azure [here](https://github.com/ticup/AzureReactiveChirper) (It can take a while before it loads if no one has visited it in a while)
 
 ## Running ##
 Runs an Orleans silo in an Azure worker role, and an Azure web role acting as a client talking to the grains in the silo.
