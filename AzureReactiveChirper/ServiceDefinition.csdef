@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="AzureReactiveChirper" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2015-04.2.6">
-  <WorkerRole name="AzureReactiveChirperSilos" vmsize="Medium">
+  <WorkerRole name="AzureReactiveChirperSilos" vmsize="ExtraSmall">
     <Imports>
     </Imports>
     <ConfigurationSettings>
@@ -36,7 +36,7 @@
       <InputEndpoint name="Endpoint1" protocol="http" port="8080" />
     </Endpoints>
   </WebRole>
-  <WorkerRole name="WebSocketRole" vmsize="Small">
+  <WorkerRole name="WebSocketRole" vmsize="ExtraSmall">
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
       <Setting name="DataConnectionString" />
